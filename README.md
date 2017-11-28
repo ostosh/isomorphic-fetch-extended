@@ -10,21 +10,3 @@ Fork of https://github.com/matthew-andrews/isomorphic-fetch with added support f
 ```sh
 npm install --save isomorphic-fetch-extended es6-promise
 ```
-
-## Usage
-
-```js
-require('es6-promise').polyfill();
-require('isomorphic-fetch-extended');
-
-fetch('//offline-news-api.herokuapp.com/stories')
-	.then(function(response) {
-		if (response.status >= 400) {
-			throw new Error("Bad response from server");
-		}
-		return response.json();
-	})
-	.then(function(stories) {
-		console.log(stories);
-	});
-```
